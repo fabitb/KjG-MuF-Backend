@@ -1,0 +1,11 @@
+node_modules/
+build/
+database/
+*.crt
+.idea/
+.idea/*
+images/*
+src/config/google/*
+src/config/apple/*
+!images/default.png
+.DS_Store
