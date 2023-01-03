@@ -9,7 +9,7 @@ import { statusRouter } from './models/status/statusRouter';
 const API_BASE_PATH = '/api';
 const app = express();
 
-app.set("port", 3000)
+app.set("port", 80)
 app.use(express.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
