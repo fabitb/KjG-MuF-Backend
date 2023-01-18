@@ -15,5 +15,7 @@ jobs:
           username: ${{ secrets.STAGING_SERVER_USER_NAME }}
           key: ${{ secrets.STAGING_SERVER_PRIVATE_KEY }}
           script: |
-            whoami
-            ls -al
+            cd KjG-MuF-Backend/
+            git pull
+            npm install
+            npm run pm2_restart
