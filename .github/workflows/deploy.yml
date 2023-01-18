@@ -1,0 +1,19 @@
+name: Deploy Server
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy NodeJS app
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{secrets.STAGING_SERVER_HOST}}
+          username: ${{ secrets.STAGING_SERVER_USER_NAME }}
+          key: ${{ secrets.STAGING_SERVER_PRIVATE_KEY }}
+          script: |
+            whoami
+            ls -al
