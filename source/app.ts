@@ -15,6 +15,10 @@ const app = express();
 //app.set("port", 80)
 //app.use(express.json());
 
+console.info(
+          "Path %s ",
+          __dirname,
+        );
 app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 
 //app.use(bodyParser.urlencoded({ extended: false }));
