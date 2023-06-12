@@ -15,7 +15,7 @@ const app = express();
 //app.set("port", 80)
 //app.use(express.json());
 
-app.use(express.static('static'));
+app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 
 //app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(bodyParser.json());
