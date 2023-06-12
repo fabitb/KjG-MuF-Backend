@@ -12,7 +12,7 @@ import { milesRouter } from './models/miles/milesRouter';
 const API_BASE_PATH = '/api';
 const app = express();
 
-app.set("port", 80)
+//app.set("port", 80)
 //app.use(express.json());
 
 app.use(express.static('static'));
