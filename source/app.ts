@@ -13,19 +13,19 @@ const API_BASE_PATH = '/api';
 const app = express();
 
 app.set("port", 80)
-app.use(express.json());
+//app.use(express.json());
 
 app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(cors())
+//app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.json());
+//app.use(cors())
 
-app.use(API_BASE_PATH, beverageRouter);
-app.use(API_BASE_PATH, statusRouter);
-app.use(API_BASE_PATH, eventRouter);
-app.use(API_BASE_PATH, commentRouter);
-app.use(API_BASE_PATH, userRouter);
-app.use(API_BASE_PATH, milesRouter);
+//app.use(API_BASE_PATH, beverageRouter);
+//app.use(API_BASE_PATH, statusRouter);
+//app.use(API_BASE_PATH, eventRouter);
+//app.use(API_BASE_PATH, commentRouter);
+//app.use(API_BASE_PATH, userRouter);
+//app.use(API_BASE_PATH, milesRouter);
 
 export default app;
