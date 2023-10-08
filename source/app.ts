@@ -8,6 +8,7 @@ import { eventRouter } from './models/event/eventRouter';
 import { commentRouter } from './models/comment/commentRouter';
 import { userRouter } from './models/user/userRouter';
 import { milesRouter } from './models/miles/milesRouter';
+import { gamesRouter } from './models/games/gamesRouter';
 
 const API_BASE_PATH = '/api';
 const app = express();
@@ -25,5 +26,6 @@ app.use(API_BASE_PATH, eventRouter);
 app.use(API_BASE_PATH, commentRouter);
 app.use(API_BASE_PATH, userRouter);
 app.use(API_BASE_PATH, milesRouter);
+app.use(API_BASE_PATH, gamesRouter)
 
 export default app;
