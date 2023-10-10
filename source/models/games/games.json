@@ -21,7 +21,7 @@
     {
         "id": 1,
         "title": "Fetzenspiel",
-        "actionScore": 6,
+        "actionScore": 5,
         "cognitiveScore": 1,
         "numberOfPlayer": "ab ca. 6 (gerade Anzahl)",
         "duration": "beliebig",
@@ -29,11 +29,68 @@
         "spaceLimitations": "",
         "materials": "Einen Fetzen",
         "goalOfGame": "Den Fetzen hinter die Linie des eigenen Teams zu bringen, um zu punkten.",
-        "preparationsInstructions": "Es werden 2 Teams gebildet. In den Teams werden geheime Nummern ausgemacht (6 Spieler =Nummern 1-6). Die Teams stellen sich gegenüber auf einer imaginären Linie auf, in der Mitte liegt derFetzen.",
+        "preparationsInstructions": "Es werden 2 Teams gebildet. In den Teams werden geheime Nummern ausgemacht (6 Spieler =Nummern 1-6). Die Teams stellen sich gegenüber auf einer imaginären Linie auf, in der Mitte liegt der Fetzen.",
         "gameplayInstructions": "Der Spielleiter nennt eine Nummer, z.B. 2 → 2 rennt und kämpft um den Fetzen. Wenn die Person den Fetzen hinter die Linie seines eigenen Teams bringt, bekommt das Team einen Punkt.Der Fetzen darf nur getragen werden, nicht geworfen oder gekickt. Wer mit dem Fetzen in der Hand vom anderen abgeklatscht wird, hat verloren → Punkt für die anderen. Der Spielleiter kann auch mehrere Nummern nennen, die Nummernpaare stimmen aber bezüglich des Abklatschens trotzdem weiter! (Nur 2 darf die andere 2 abklatschen)",
         "endingInstructions": "Das Spiel ist vorbei, wenn ein Team die zuvor bestimmte Punktzahl erreicht hat oder die Spieler keine Lust mehr haben.",
         "categories": [
             "Kampf"
+        ],
+        "author": "Fabian"
+    },
+    {
+        "id": 2,
+        "title": "Big Fat Pony",
+        "actionScore": 2,
+        "cognitiveScore": 1,
+        "numberOfPlayer": "5+",
+        "duration": "5 - 10 Min.",
+        "ageLimitations": "",
+        "spaceLimitations": "",
+        "materials": "",
+        "goalOfGame": "Dass alle am Ende einmal zu dem Song getanzt haben.",
+        "preparationsInstructions": "Alle stehen im Kreis und einer steht in der Mitte.",
+        "gameplayInstructions": "Alle stehen zusammen in einem Kreis. In der Mitte steht eine Person, die im Kreis herumläuft und singt: „Do you know my big fat pony, do you know my big fat pony, do you know my big fat pony, this is how it goes:“. Die Person bleibt stehen und springt zusammen mit der Person herum, dabei wird einfach weitergesungen: „front to front to front my baby“ die beiden drehen sich um und singen: „back to back to back my baby“ die beiden drehen sich seitlich zueinander und tanzen: „side to side to side my baby“. Danach tanzen die beiden im Kreis herum und das Spiel geht genauso weiter.",
+        "endingInstructions": "Das Spiel ist vorbei, wenn jeder eimal getanzt hat.",
+        "categories": [
+            "WUP"
+        ],
+        "author": "Fabian"
+    },
+    {
+        "id": 3,
+        "title": "Muffinman",
+        "actionScore": 3,
+        "cognitiveScore": 1,
+        "numberOfPlayer": "ab ca. 10+",
+        "duration": "umso mehr Spieler, desto länger",
+        "ageLimitations": "",
+        "spaceLimitations": "",
+        "materials": "",
+        "goalOfGame": "Lustig sein und aufwachen.",
+        "preparationsInstructions": "Alle stehen im Kreis.",
+        "gameplayInstructions": "Eine Person fängt an und geht zu einer anderen und singt: Do you know the Muffinman, ..., who lives in Fory Lane. Daraufhin singt der andere: Yes, I know the Muffinman, ..., who lives in Fory Lane. Danach singen beide: We are know the Muffinman, ..., who lives in Fory Lane. Dabei haken sie sich gegenseitig unter und drehen sich. Danach tanzen beide jemand neues an.",
+        "endingInstructions": "Das Spiel ist vorbei, wenn alle Spieler dran waren.",
+        "categories": [
+            "WUP"
+        ],
+        "author": "Fabian"
+    },
+    {
+        "id": 4,
+        "title": "Piratenschiff",
+        "actionScore": 1,
+        "cognitiveScore": 3,
+        "numberOfPlayer": "4+",
+        "duration": "30 - 45 Min.",
+        "ageLimitations": "",
+        "spaceLimitations": "",
+        "materials": "",
+        "goalOfGame": "Jeder Spieler versteht, was er auf das Schiff mitnehmen darf.",
+        "preparationsInstructions": "",
+        "gameplayInstructions": "Reihung -> Was darf mit aufs Piratenschiff? Immer die Gegenstände, die mit dem Buschstaben anfangen, dass der Reihe nach das Wort Piratenschiff gebildet wird. Pilze Igel Ratte Ananas...",
+        "endingInstructions": "Das Spiel ist vorbei, wenn die Spieler keine Lust mehr haben oder alle Spieler das Spiel verstanden haben.",
+        "categories": [
+            "Denken"
         ],
         "author": "Fabian"
     }
