@@ -4,9 +4,9 @@ import https from "https";
 import fs from "fs";
 import app from "./app";
 
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de-0001/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de-0001/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de-0001/chain.pem', 'utf8');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de/chain.pem', 'utf8');
 
 const credentials = {
     key: privateKey,
