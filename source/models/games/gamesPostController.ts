@@ -1,4 +1,5 @@
 import { gameRepository } from "../../repositories/gameRepository/gameRepository";
+import { verifyToken } from "../../server";
 import * as errors from "../errors/kjgBackendError";
 
 export module gamesPostController {
@@ -35,6 +36,10 @@ export module gamesPostController {
 
     export async function updateGame(req, res) {
 
+        if (!verifyToken(req.query.apiToken)) {
+            throw errors.InvalidApiToken()
+        }
+
         if (!req.params.gameID) {
             throw errors.UnprocessableEntity("Mandatory values missing, cannot update game.")
         }
@@ -67,6 +72,10 @@ export module gamesPostController {
 
     export async function setReviewStatus(req, res) {
 
+        if (!verifyToken(req.query.apiToken)) {
+            throw errors.InvalidApiToken()
+        }
+
         if (!req.params.gameID) {
             throw errors.UnprocessableEntity("Mandatory values missing, cannot update game.")
         }
@@ -81,6 +90,12 @@ export module gamesPostController {
         }
 
         res.status(200).json(updatedGame)
+
+    }
+
+    export async function isAuthorized(req, res) {
+
+        res.status(200).json({ success: verifyToken(req.query.apiToken) });
 
     }
 

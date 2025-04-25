@@ -10,6 +10,7 @@ gamesRouter.get('/games', asyncHandler(gamesGetController.getGames))
 
 gamesRouter.post('/game', asyncHandler(gamesPostController.createGame))
 gamesRouter.post('/game/:gameID/reviewed', asyncHandler(gamesPostController.setReviewStatus))
+gamesRouter.post('/games/isAuthorized', asyncHandler(gamesPostController.isAuthorized))
 
 gamesRouter.delete('/game/:gameID', asyncHandler(gamesDeleteController.deleteGameByID))
 

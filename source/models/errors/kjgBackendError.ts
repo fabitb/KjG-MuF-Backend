@@ -2,7 +2,7 @@ export class KjGWarning extends Error {
     statusCode: number
     description: string
 
-    constructor(statusCode = 450, message = "Client Error", description="") {
+    constructor(statusCode = 450, message = "Client Error", description = "") {
         super(message);
 
         this.name = "KjGWarning";
@@ -16,7 +16,7 @@ export class KjGError extends Error {
     statusCode: number
     description: string
 
-    constructor(statusCode = 500, message = "Internal Server Error", description="") {
+    constructor(statusCode = 500, message = "Internal Server Error", description = "") {
         super(message);
 
         this.name = "KjGError";
@@ -24,6 +24,11 @@ export class KjGError extends Error {
         this.description = description;
     }
 
+}
+
+export function InvalidApiToken() {
+    const message = `Invalid API token.`;
+    return new KjGWarning(401, message);
 }
 
 export function NotFound(type, description) {

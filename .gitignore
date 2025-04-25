@@ -9,3 +9,4 @@ src/config/google/*
 src/config/apple/*
 !images/default.png
 .DS_Store
+.env

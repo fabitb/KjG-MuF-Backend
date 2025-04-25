@@ -3,16 +3,19 @@ import http from "http";
 import https from "https";
 import fs from "fs";
 import app from "./app";
+import * as dotenv from "dotenv";
 
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de/chain.pem', 'utf8');
+//const privateKey = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de/privkey.pem', 'utf8');
+//const certificate = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de/cert.pem', 'utf8');
+//const ca = fs.readFileSync('/etc/letsencrypt/live/app.kjg-muenchen.de/chain.pem', 'utf8');
 
-const credentials = {
-    key: privateKey,
-    cert: certificate,
-    ca: ca
-};
+//const credentials = {
+//    key: privateKey,
+//    cert: certificate,
+//    ca: ca
+//};
+
+dotenv.config();
 
 mongoose.connect("mongodb://127.0.0.1:27017/kjg-db", {
     autoCreate: true,
@@ -21,14 +24,26 @@ mongoose.connect("mongodb://127.0.0.1:27017/kjg-db", {
     console.log(`error: ${err}`);
 });
 
-//const httpServer = http.createServer(app);
-const httpsServer = https.createServer(credentials, app);
+const httpServer = http.createServer(app);
+//const httpsServer = https.createServer(credentials, app);
 
-const server = httpsServer.listen(443, () => {
+const server = httpServer.listen(3000, () => {
     console.info(
-        "  App is running at http://localhost:%d ",
+        "App is running at http://localhost:%d",
         app.get("port"),
     );
 });
 
 export default server;
+
+export function verifyToken(token: string): boolean {
+
+    const actualToken = process.env.TOKEN
+
+    if (!actualToken) {
+        console.error("TOKEN is not defined in .env file")
+        return false
+    }
+
+    return token === actualToken
+}
