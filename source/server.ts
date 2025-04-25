@@ -21,10 +21,10 @@ mongoose.connect("mongodb://127.0.0.1:27017/kjg-db", {
     console.log(`error: ${err}`);
 });
 
-//const httpServer = http.createServer(app);
-const httpsServer = https.createServer(credentials, app);
+const httpServer = http.createServer(app);
+//const httpsServer = https.createServer(credentials, app);
 
-const server = httpsServer.listen(443, () => {
+const server = httpServer.listen(3000, () => {
     console.info(
         "  App is running at http://localhost:%d ",
         app.get("port"),
