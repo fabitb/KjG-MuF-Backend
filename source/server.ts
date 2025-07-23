@@ -23,3 +23,15 @@ const server = httpServer.listen(PORT, () => {
 });
 
 export default server;
+
+export function verifyToken(token: string): boolean {
+
+    const actualToken = process.env.TOKEN
+
+    if (!actualToken) {
+        console.error("TOKEN is not defined in .env file")
+        return false
+    }
+
+    return token === actualToken
+}
