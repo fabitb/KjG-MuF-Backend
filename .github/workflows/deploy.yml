@@ -1,8 +1,8 @@
 name: Deploy Server
 
-#on:
-#  push:
-#    branches: [ main ]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -28,11 +28,11 @@ jobs:
             fi
 
             # Build and deploy with Docker Compose
-            docker-compose --profile prod build
-            docker-compose --profile prod up -d
+            docker compose -f docker-compose.prod.yml build
+            docker compose -f docker-compose.prod.yml up -d
 
             # Show status
-            docker-compose ps
+            docker compose ps
 
             # Show recent logs to verify deployment
-            docker-compose logs --tail=50 backend-prod
+            docker compose logs --tail=50 backend-prod
