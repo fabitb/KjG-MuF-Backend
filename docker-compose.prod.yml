@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  # Backend service - Production profile
+  backend-app:
+    build:
+      context: .
+      target: production
+    container_name: backend-prod
+    profiles: ["prod"]
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      # MONGODB_URI and MONGODB_DATABASE come from .env file
+      # Can point to external MongoDB or the Docker MongoDB service
+    ports:
+      - "3000:3000"
+    # Uncomment if using Docker MongoDB container:
+    # depends_on:
+    #   mongodb:
+    #     condition: service_healthy
+    #   networks:
+    #     - app-network
+    # For external MongoDB on host machine (127.0.0.1), use host network:
+    network_mode: host
+    # For remote MongoDB, comment out network_mode and uncomment networks:
+    # networks:
+    #   - app-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/api/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
+  mongodb_config:
+    driver: local
