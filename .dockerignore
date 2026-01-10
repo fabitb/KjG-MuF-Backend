@@ -1,0 +1,31 @@
+# Dependencies
+node_modules
+npm-debug.log
+
+# Build artifacts
+build
+
+# Git
+.git
+.gitignore
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Documentation
+*.md
+!README.md
+
+# IDE
+.DS_Store
+.idea
+.vscode
+
+# Local data
+database
+images
+
+# Certificates
+*.crt

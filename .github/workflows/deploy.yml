@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy NodeJS app
+      - name: Deploy Docker container
         uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{secrets.STAGING_SERVER_HOST}}
@@ -16,6 +16,23 @@ jobs:
           key: ${{ secrets.STAGING_SERVER_PRIVATE_KEY }}
           script: |
             cd KjG-MuF-Backend/
+
+            # Pull latest code
             git pull
-            npm install
-            npm run pm2_restart
+
+            # Ensure .env file exists (create from example if missing)
+            if [ ! -f .env ]; then
+              echo "Creating .env from .env.example..."
+              cp .env.example .env
+              echo "⚠️  WARNING: Please update .env with production credentials!"
+            fi
+
+            # Build and deploy with Docker Compose
+            docker compose -f docker-compose.prod.yml build
+            docker compose -f docker-compose.prod.yml up -d
+
+            # Show status
+            docker compose ps
+
+            # Show recent logs to verify deployment
+            docker compose logs --tail=50 backend-prod

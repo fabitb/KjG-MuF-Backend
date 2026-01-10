@@ -4,11 +4,10 @@
   "description": "Backend for the KjG-MuF-App",
   "main": "source/server.ts",
   "scripts": {
-    "build-ts": "tsc",
     "dev": "nodemon source/server.ts",
-    "build": "rm -rf build/ && prettier --write source/ && tsc",
-    "pm2_start": "npm run build-ts && pm2 start ./build/server.js",
-    "pm2_restart": "npm run build-ts && pm2 restart ./build/server.js"
+    "build": "rm -rf build/ && tsc",
+    "start": "node build/server.js",
+    "format": "prettier --write source/"
   },
   "author": "",
   "license": "ISC",
