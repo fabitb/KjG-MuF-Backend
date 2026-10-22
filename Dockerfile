@@ -25,8 +25,8 @@ CMD ["npm", "run", "dev"]
 FROM base AS builder
 ENV NODE_ENV=production
 
-# Install all dependencies for building
-RUN npm install
+# Install all dependencies for building (incl. devDependencies like typescript)
+RUN npm ci --include=dev
 
 # Copy source code
 COPY . .
