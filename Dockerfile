@@ -43,7 +43,7 @@ ENV NODE_ENV=production
 COPY package*.json ./
 
 # Install ONLY production dependencies
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # Copy built application from builder stage
 COPY --from=builder /app/build ./build
